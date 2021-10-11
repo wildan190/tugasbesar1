@@ -34,7 +34,6 @@ class tugasBesar1 extends StatefulWidget {
 }
 
 class _tugasBesar1 extends State<tugasBesar1> {
-  // ignore: non_constant_identifier_names
   int frame1 = 1;
 
   void acakGambar() {
@@ -63,7 +62,6 @@ class _tugasBesar1 extends State<tugasBesar1> {
               Padding(
                   padding: const EdgeInsets.only(bottom: 150.00),
                   child: GestureDetector(
-                    // ignore: deprecated_member_use
                     child: FlatButton(
                       child: Text(
                         'Click!!!',
