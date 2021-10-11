@@ -1,77 +1,85 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Mayor Project1',
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              'Major Project1',
+            ),
           ),
+          backgroundColor: Colors.amber[700],
         ),
-        backgroundColor: Colors.amber[700],
+        body: tugasBesar1(),
       ),
-      body: Center(
-        child: Tugas1(),
-      ),
-    ));
+    );
   }
 }
 
-class Tugas1 extends StatefulWidget {
-  const Tugas1({Key? key}) : super(key: key);
+class tugasBesar1 extends StatefulWidget {
+  const tugasBesar1({Key? key}) : super(key: key);
+
   @override
-  _Tugas1State createState() => _Tugas1State();
+  _tugasBesar1 createState() => _tugasBesar1();
 }
 
-class _Tugas1State extends State<Tugas1> {
-  int frameLeft = 1;
-  int frameRight = 2;
+class _tugasBesar1 extends State<tugasBesar1> {
+  // ignore: non_constant_identifier_names
+  int frame1 = 1;
 
   void acakGambar() {
     setState(() {
-      frameLeft = Random().nextInt(6) + 1;
-      frameRight = Random().nextInt(6) + 1;
+      frame1 = Random().nextInt(6) + 1;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Column(children: [
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            child: Image.asset(
-              'images/image$frameLeft.jpg',
+      child: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(55.0),
+              child: GestureDetector(
+                child: Image.asset(
+                  'images/image$frame1.jpg',
+                ),
+              ),
             ),
-            onTap: () {
-              acakGambar();
-            },
           ),
-        ),
+          Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 150.00),
+                  child: GestureDetector(
+                    // ignore: deprecated_member_use
+                    child: FlatButton(
+                      child: Text(
+                        'Click!!!',
+                        style: TextStyle(fontSize: 22.0),
+                      ),
+                      color: Colors.amber[700],
+                      textColor: Colors.white,
+                      onPressed: () {
+                        acakGambar();
+                      },
+                    ),
+                  )),
+            ],
+          ),
+        ],
       ),
-      Expanded(child: Align(
-        child: GestureDetector(
-          onTap: () {
-            acakGambar();
-          },
-        ),
-      ))
-    ]));
+    );
   }
 }
