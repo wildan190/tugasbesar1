@@ -51,7 +51,7 @@ class _Tugas1State extends State<Tugas1> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Row(children: [
+        child: Column(children: [
       Expanded(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -65,15 +65,12 @@ class _Tugas1State extends State<Tugas1> {
           ),
         ),
       ),
-      Expanded(
-          child: GestureDetector(
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Text('click'),
+      Expanded(child: Align(
+        child: GestureDetector(
+          onTap: () {
+            acakGambar();
+          },
         ),
-        onTap: () {
-          acakGambar();
-        },
       ))
     ]));
   }
